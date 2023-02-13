@@ -58,9 +58,9 @@ begin
 
   FFNCMaps:= TTMSFNCMaps.Create(nil);
   FFNCGeocoding:= TTMSFNCGeocoding.Create(Self);
-  FFNCMaps.APIKey:= 'AIzaSyBPlZwdSxT0vu7yDhm351Gu3_L3NDdNPO8';
-  FFNCGeocoding.APIKey := 'AIzaSyBPlZwdSxT0vu7yDhm351Gu3_L3NDdNPO8';
-  FFNCRouteCalculator.APIKey := 'AIzaSyBPlZwdSxT0vu7yDhm351Gu3_L3NDdNPO8';
+  FFNCMaps.APIKey:= 'APIKEY';
+  FFNCGeocoding.APIKey := 'APIKEY';
+  FFNCRouteCalculator.APIKey := 'APIKEY';
 
   FFNCMaps.Parent:= Self;
   FFNCMaps.Align:= TAlign.alClient;
@@ -155,46 +155,4 @@ begin
     FFNCMaps.SetCenterCoordinate(ARequest.Items[0].Coordinate.ToRec);
 end;
 
-{
-procedure TForm1.CrearMapa;
-var
- APIKey: string;
-begin
- APIKey := 'AIzaSyBPlZwdSxT0vu7yDhm351Gu3_L3NDdNPO8';
- FFNCRouteCalculator.Active := True;
- FFNCRouteCalculator.Options.HistoryEnabled := True;
- FFNCRouteCalculator.Service := csGoogle;
- FFNCRouteCalculator.APIKey := APIKey;
- FFNCMaps.RouteCalculator := FFNCRouteCalculator;
- FFNCMaps.Service := msGoogleMaps;
- FFNCMaps.APIKey := APIKey;
-end;
-}
-
-{
-procedure TForm1.generarRutas(Sender: TObject;
-  const ARequest: TTMSFNCGeocodingRequest;
-  const ARequestResult: TTMSFNCCloudBaseRequestResult);
-var
- I: Integer;
- it: TTMSFNCGeocodingItem;
- FStartAddress, FEndAddress: TTMSFNCMapsCoordinateRec;
-begin
-  for I := 0 to ARequest.Items.Count - 1 do
-    begin
-    it := ARequest.Items[I];
-    if ARequest.ID = 'origin' then
-    begin
-    FStartAddress := it.Coordinate.ToRec;
-    FFNCMaps.SetCenterCoordinate(FStartAddress);
-    FFNCMaps.AddMarker(FStartAddress);
-    end;
-    if ARequest.ID = 'destination' then
-      begin
-      FEndAddress := it.Coordinate.ToRec;
-      FFNCMaps.AddMarker(FEndAddress);
-      end;
-    end;
-end;
- }
 end.

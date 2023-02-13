@@ -13,7 +13,7 @@ object Form1: TForm1
   WindowState = wsMaximized
   OnActivate = FormActivate
   OnCreate = FormCreate
-  TextHeight = 15
+  TextHeight = 16
   object SpeedButton1: TSpeedButton
     Left = 0
     Top = 140
