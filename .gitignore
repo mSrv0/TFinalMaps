@@ -1,0 +1,13 @@
+.svn
+*.dcu
+*.identcache
+*.local
+PW_Movil/Android/
+*__recovery
+*__history
+*.dsk
+*.groupproj
+*.dpr
+*.dproj
+*.dsk
+*.~dsk
